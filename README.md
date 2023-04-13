@@ -1,6 +1,7 @@
 # letteravatar
+
 [![GoDoc](https://godoc.org/github.com/disintegration/letteravatar?status.svg)](https://godoc.org/github.com/disintegration/letteravatar)
-[![Build Status](https://travis-ci.org/disintegration/letteravatar.svg?branch=master)](https://travis-ci.org/disintegration/letteravatar)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/HaoZi-Team/letteravatar/test.yml?branch=main&style=flat-square)
 
 Letter avatar generation for Go.
 
@@ -20,13 +21,14 @@ type Options struct {
 	Palette     []color.Color
 	LetterColor color.Color
 	PaletteKey  string
+	FontSize    int
 }
 ```
 
 Using a custom palette:
 
 ```go
-img, err := letteravatar.Draw(100, 'A', &letteravatar.Options{
+img, err := letteravatar.Draw(100, []rune{'A'}, &letteravatar.Options{
 	Palette: []color.Color{
 		color.RGBA{255, 0, 0, 255},
 		color.RGBA{0, 255, 0, 255},
@@ -37,7 +39,7 @@ img, err := letteravatar.Draw(100, 'A', &letteravatar.Options{
 
 ## Documentation
 
-[https://godoc.org/github.com/disintegration/letteravatar](https://godoc.org/github.com/disintegration/letteravatar)
+[https://godoc.org/github.com/HaoZi-Team/letteravatar](https://godoc.org/github.com/HaoZi-Team/letteravatar)
 
 ## Examples
 
@@ -62,7 +64,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/disintegration/letteravatar"
+	"github.com/HaoZi-Team/letteravatar"
 )
 
 var names = []string{
@@ -84,7 +86,7 @@ func main() {
 	for _, name := range names {
 		firstLetter, _ := utf8.DecodeRuneInString(name)
 
-		img, err := letteravatar.Draw(75, firstLetter, nil)
+		img, err := letteravatar.Draw(75, []rune{firstLetter}, nil)
 		if err != nil {
 			log.Fatal(err)
 		}
