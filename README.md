@@ -1,6 +1,6 @@
 # letteravatar
 
-[![GoDoc](https://godoc.org/github.com/disintegration/letteravatar?status.svg)](https://godoc.org/github.com/disintegration/letteravatar)
+[![GoDoc](https://godoc.org/github.com/HaoZi-Team/letteravatar?status.svg)](https://godoc.org/github.com/HaoZi-Team/letteravatar)
 ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/HaoZi-Team/letteravatar/test.yml?branch=main&style=flat-square)
 
 Letter avatar generation for Go.
