@@ -6,7 +6,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/disintegration/letteravatar"
+	"github.com/HaoZi-Team/letteravatar"
 )
 
 var names = []string{
@@ -28,7 +28,7 @@ func main() {
 	for _, name := range names {
 		firstLetter, _ := utf8.DecodeRuneInString(name)
 
-		img, err := letteravatar.Draw(75, firstLetter, nil)
+		img, err := letteravatar.Draw(75, []rune{firstLetter}, nil)
 		if err != nil {
 			log.Fatal(err)
 		}
