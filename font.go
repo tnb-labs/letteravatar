@@ -213,7 +213,7 @@ import (
 	"compress/gzip"
 	"io"
 
-	"github.com/golang/freetype/truetype"
+	"github.com/goki/freetype/truetype"
 )
 
 var defaultFont *truetype.Font

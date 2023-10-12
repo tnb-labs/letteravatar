@@ -6,7 +6,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/HaoZi-Team/letteravatar"
+	"github.com/haozi-team/letteravatar"
 )
 
 var names = []string{

@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/golang/freetype"
-	"github.com/golang/freetype/truetype"
+	"github.com/goki/freetype"
+	"github.com/goki/freetype/truetype"
 	"golang.org/x/image/math/fixed"
 )
 

@@ -39,7 +39,7 @@ img, err := letteravatar.Draw(100, []rune{'A'}, &letteravatar.Options{
 
 ## Documentation
 
-[https://godoc.org/github.com/HaoZi-Team/letteravatar](https://godoc.org/github.com/HaoZi-Team/letteravatar)
+[https://godoc.org/github.com/haozi-team/letteravatar](https://godoc.org/github.com/haozi-team/letteravatar)
 
 ## Examples
 
@@ -64,7 +64,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/HaoZi-Team/letteravatar"
+	"github.com/haozi-team/letteravatar"
 )
 
 var names = []string{
