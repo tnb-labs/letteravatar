@@ -226,7 +226,7 @@ func init() {
 	defer gz.Close()
 
 	var buf bytes.Buffer
-	io.Copy(&buf, gz)
+	_, err = io.Copy(&buf, gz)
 	if err != nil {
 		panic(err)
 	}
