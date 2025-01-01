@@ -5,7 +5,7 @@
 [![Release](https://img.shields.io/github/release/tnb-labs/letteravatar.svg)](https://github.com/tnb-labs/letteravatar/releases)
 [![Test](https://github.com/tnb-labs/letteravatar/actions/workflows/test.yml/badge.svg)](https://github.com/tnb-labs/letteravatar/actions)
 [![Report Card](https://goreportcard.com/badge/github.com/tnb-labs/letteravatar)](https://goreportcard.com/report/github.com/tnb-labs/letteravatar)
-[![License](https://img.shields.io/github/license/tnb-labs/letteravatar)](https://www.gnu.org/licenses/agpl-3.0.html)
+[![License](https://img.shields.io/github/license/tnb-labs/letteravatar)](https://mit-license.org/)
 
 Letter avatar generation for Go.
 
