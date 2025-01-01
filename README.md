@@ -1,7 +1,11 @@
 # letteravatar
 
-[![GoDoc](https://godoc.org/github.com/HaoZi-Team/letteravatar?status.svg)](https://godoc.org/github.com/HaoZi-Team/letteravatar)
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/HaoZi-Team/letteravatar/test.yml?branch=main&style=flat-square)
+[![GoDoc](https://godoc.org/github.com/tnb-labs/letteravatar?status.svg)](https://godoc.org/github.com/tnb-labs/letteravatar)
+[![Go](https://img.shields.io/github/go-mod/go-version/tnb-labs/letteravatar)](https://go.dev/)
+[![Release](https://img.shields.io/github/release/tnb-labs/letteravatar.svg)](https://github.com/tnb-labs/letteravatar/releases)
+[![Test](https://github.com/tnb-labs/letteravatar/actions/workflows/test.yml/badge.svg)](https://github.com/tnb-labs/letteravatar/actions)
+[![Report Card](https://goreportcard.com/badge/github.com/tnb-labs/letteravatar)](https://goreportcard.com/report/github.com/tnb-labs/letteravatar)
+[![License](https://img.shields.io/github/license/tnb-labs/letteravatar)](https://www.gnu.org/licenses/agpl-3.0.html)
 
 Letter avatar generation for Go.
 
@@ -39,7 +43,7 @@ img, err := letteravatar.Draw(100, []rune{'A'}, &letteravatar.Options{
 
 ## Documentation
 
-[https://godoc.org/github.com/haozi-team/letteravatar](https://godoc.org/github.com/haozi-team/letteravatar)
+[https://godoc.org/github.com/tnb-labs/letteravatar](https://godoc.org/github.com/tnb-labs/letteravatar)
 
 ## Examples
 
@@ -64,7 +68,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/haozi-team/letteravatar"
+	"github.com/tnb-labs/letteravatar"
 )
 
 var names = []string{

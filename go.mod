@@ -1,4 +1,4 @@
-module github.com/haozi-team/letteravatar
+module github.com/tnb-labs/letteravatar
 
 go 1.20
 
