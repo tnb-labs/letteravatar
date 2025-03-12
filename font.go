@@ -213,10 +213,10 @@ import (
 	"compress/gzip"
 	"io"
 
-	"github.com/goki/freetype/truetype"
+	"golang.org/x/image/font/opentype"
 )
 
-var defaultFont *truetype.Font
+var defaultFont *opentype.Font
 
 func init() {
 	gz, err := gzip.NewReader(bytes.NewBuffer(fontData))
@@ -231,7 +231,7 @@ func init() {
 		panic(err)
 	}
 
-	defaultFont, err = truetype.Parse(buf.Bytes())
+	defaultFont, err = opentype.Parse(buf.Bytes())
 	if err != nil {
 		panic(err)
 	}

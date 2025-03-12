@@ -1,8 +1,7 @@
 module github.com/tnb-labs/letteravatar
 
-go 1.20
+go 1.23.0
 
-require (
-	github.com/goki/freetype v1.0.1
-	golang.org/x/image v0.13.0
-)
+require golang.org/x/image v0.25.0
+
+require golang.org/x/text v0.23.0 // indirect
