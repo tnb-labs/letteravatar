@@ -1,10 +1,10 @@
 # letteravatar
 
-[![GoDoc](https://godoc.org/github.com/tnb-labs/letteravatar?status.svg)](https://godoc.org/github.com/tnb-labs/letteravatar)
+[![GoDoc](https://godoc.org/github.com/tnb-labs/letteravatar/v2?status.svg)](https://godoc.org/github.com/tnb-labs/letteravatar/v2)
 [![Go](https://img.shields.io/github/go-mod/go-version/tnb-labs/letteravatar)](https://go.dev/)
-[![Release](https://img.shields.io/github/release/tnb-labs/letteravatar.svg)](https://github.com/tnb-labs/letteravatar/releases)
-[![Test](https://github.com/tnb-labs/letteravatar/actions/workflows/test.yml/badge.svg)](https://github.com/tnb-labs/letteravatar/actions)
-[![Report Card](https://goreportcard.com/badge/github.com/tnb-labs/letteravatar)](https://goreportcard.com/report/github.com/tnb-labs/letteravatar)
+[![Release](https://img.shields.io/github/release/tnb-labs/letteravatar.svg)](https://github.com/tnb-labs/letteravatar/v2/releases)
+[![Test](https://github.com/tnb-labs/letteravatar/v2/actions/workflows/test.yml/badge.svg)](https://github.com/tnb-labs/letteravatar/v2/actions)
+[![Report Card](https://goreportcard.com/badge/github.com/tnb-labs/letteravatar/v2)](https://goreportcard.com/report/github.com/tnb-labs/letteravatar/v2)
 [![License](https://img.shields.io/github/license/tnb-labs/letteravatar)](https://mit-license.org/)
 
 Letter avatar generation for Go.
@@ -43,7 +43,7 @@ img, err := letteravatar.Draw(100, []rune{'A'}, &letteravatar.Options{
 
 ## Documentation
 
-[https://godoc.org/github.com/tnb-labs/letteravatar](https://godoc.org/github.com/tnb-labs/letteravatar)
+[https://godoc.org/github.com/tnb-labs/letteravatar/v2](https://godoc.org/github.com/tnb-labs/letteravatar/v2)
 
 ## Examples
 
@@ -68,7 +68,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/tnb-labs/letteravatar"
+	"github.com/tnb-labs/letteravatar/v2"
 )
 
 var names = []string{
