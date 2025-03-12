@@ -57,27 +57,13 @@ func Draw(size int, letters []rune, options *Options) (image.Image, error) {
 	return drawAvatar(bgColor, options.LetterColor, options.Font, size, float64(options.FontSize), letters)
 }
 
-func drawAvatar(bgColor, fgColor color.Color, f *opentype.Font, size int, fontSize float64, letters []rune) (image.Image, error) {
-	dst := newRGBA(size, size, bgColor)
-
-	src, err := drawString(bgColor, fgColor, f, size, fontSize, letters)
-	if err != nil {
-		return nil, err
-	}
-
-	r := src.Bounds().Add(dst.Bounds().Size().Div(2)).Sub(src.Bounds().Size().Div(2))
-	draw.Draw(dst, r, src, src.Bounds().Min, draw.Src)
-
-	return dst, nil
-}
-
-func drawString(bgColor, fgColor color.Color, f *opentype.Font, size int, fontSize float64, letters []rune) (image.Image, error) {
-	// 自动计算字体大小
+func drawAvatar(bgColor, fgColor color.Color, ft *opentype.Font, size int, fontSize float64, letters []rune) (image.Image, error) {
+	// Auto-calculate font size if not provided
 	if fontSize <= 0 {
 		fontSize = calculateFontSize(len(letters), size)
 	}
 
-	face, err := opentype.NewFace(f, &opentype.FaceOptions{
+	face, err := opentype.NewFace(ft, &opentype.FaceOptions{
 		Size:    fontSize,
 		DPI:     72,
 		Hinting: font.HintingFull,
@@ -87,29 +73,27 @@ func drawString(bgColor, fgColor color.Color, f *opentype.Font, size int, fontSi
 	}
 	defer face.Close()
 
-	// 计算文本尺寸以居中显示
 	textWidth, ascent, descent, _ := calculateTextDimensions(face, string(letters))
-
 	x := (size - textWidth) / 2
 	y := size/2 + (ascent-descent)/2
 
-	dst := newRGBA(x, y, bgColor)
+	dst := newRGBA(size, size, bgColor)
 	drawText(dst, face, string(letters), x, y, fgColor)
 
 	return dst, nil
 }
 
-// calculateFontSize 根据图像大小和文本长度确定最佳字体大小
+// calculateFontSize calculates the best font size based on image size and text length
 func calculateFontSize(textLength int, imageSize int) float64 {
-	// 以图像大小的2/3作为初始大小估计
+	// use 2/3 of the image size as the initial size estimate
 	initialSize := float64(imageSize) * 2.0 / 3.0
 
-	// 根据文本长度调整
+	// adjust based on text length
 	if textLength > 1 {
 		initialSize = initialSize * 3.0 / float64(textLength+2)
 	}
 
-	// 确保字体大小至少为12px且不超过图像大小
+	// make sure the font size is at least 12px and does not exceed the image size
 	if initialSize < 12 {
 		initialSize = 12
 	} else if initialSize > float64(imageSize) {
@@ -119,19 +103,19 @@ func calculateFontSize(textLength int, imageSize int) float64 {
 	return initialSize
 }
 
-// calculateTextDimensions 计算文本的宽度和高度，返回宽度、上升部分高度、下降部分高度和行间距
+// calculateTextDimensions calculates the width and height of the text
 func calculateTextDimensions(face font.Face, text string) (width int, ascent int, descent int, lineGap int) {
 	metrics := face.Metrics()
 	ascent = metrics.Ascent.Ceil()
 	descent = metrics.Descent.Ceil()
 	lineGap = metrics.Height.Ceil() - ascent - descent
 
-	// 计算文本宽度
+	// width
 	var w fixed.Int26_6
 	for _, r := range text {
 		adv, ok := face.GlyphAdvance(r)
 		if !ok {
-			adv, _ = face.GlyphAdvance(' ') // 如果字符不支持，使用空格的宽度
+			adv, _ = face.GlyphAdvance(' ') // if glyph not found, fall back to space
 		}
 		w += adv
 	}
@@ -139,7 +123,7 @@ func calculateTextDimensions(face font.Face, text string) (width int, ascent int
 	return w.Ceil(), ascent, descent, lineGap
 }
 
-// drawText 将文本绘制到图像上
+// drawText draws the text on the image
 func drawText(img *image.RGBA, face font.Face, text string, x, y int, textColor color.Color) {
 	d := &font.Drawer{
 		Dst:  img,
