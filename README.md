@@ -20,7 +20,7 @@ The third parameter `options *Options` can be used for customization:
 
 ```go
 type Options struct {
-	Font        *truetype.Font
+	Font        *opentype.Font
 	Palette     []color.Color
 	LetterColor color.Color
 	PaletteKey  string

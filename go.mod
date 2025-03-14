@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 module github.com/weavatar/initials
 
 go 1.23.0
