@@ -1,4 +1,4 @@
-module github.com/tnb-labs/letteravatar/v2
+module github.com/weavatar/initials
 
 go 1.23.0
 

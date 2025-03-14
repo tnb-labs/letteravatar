@@ -6,7 +6,7 @@ import (
 	"os"
 	"unicode/utf8"
 
-	"github.com/tnb-labs/letteravatar/v2"
+	"github.com/weavatar/initials"
 )
 
 var names = []string{
@@ -28,7 +28,7 @@ func main() {
 	for _, name := range names {
 		firstLetter, _ := utf8.DecodeRuneInString(name)
 
-		img, err := letteravatar.Draw(75, []rune{firstLetter}, nil)
+		img, err := initials.Draw(75, []rune{firstLetter}, nil)
 		if err != nil {
 			log.Fatal(err)
 		}

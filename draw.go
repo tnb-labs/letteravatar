@@ -1,5 +1,5 @@
-// Package letteravatar generates letter-avatars.
-package letteravatar
+// Package initials generates initials-avatars.
+package initials
 
 import (
 	"fmt"

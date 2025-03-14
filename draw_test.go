@@ -1,4 +1,4 @@
-package letteravatar
+package initials
 
 import (
 	"image"

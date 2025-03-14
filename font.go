@@ -206,7 +206,7 @@
 
 */
 
-package letteravatar
+package initials
 
 import (
 	"bytes"
